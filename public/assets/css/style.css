@@ -1,0 +1,29 @@
+.main {
+    color: #FFFFFF;
+}
+body{
+    background: #0A0A0A;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+.container{
+    display: flex;
+    justify-content: center;
+}
+
+.login_auth_input{
+    width: 311px;
+    height: 29px;
+    background: #0A0A0A;
+    color: #FFFFFF;
+}
+
+.text-hello{
+    margin-left: 120px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 21px;
+    margin-top: 35px;
+}

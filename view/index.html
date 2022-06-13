@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="/assets/css/style.css" />
+
+<head>
+
+</head>
+<body>
+<div class="container" >
+    <div class="main">
+        <div style="margin: 155px 120px 0px ">
+            <img  src="/assets/image/5ff7553028794d0649e7cf54_oto%20copy.svg">
+        </div>
+        <p class="text-hello" id="hello_text">Hello Bro </p>
+        <form id="form" action="" method="post" >
+             <input class="login_auth_input" type="text" name="username" placeholder="Login" style="margin-top: 84px" required="required"><br>
+             <input class="login_auth_input" type="number" name="password" placeholder="Password" style="margin-top: 40px" required><br>
+             <input style="margin: 40px  0px 0px 110px; width:  120px " id="submit"  name="submit" value="Войти" type="submit" onclick="sub()" >
+        </form>
+
+
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>
+
+
+    function sub() {
+        var data={
+            formObject :{},
+        }
+
+        var formArray =$("form").serializeArray();
+        $.each(formArray,function(i,item){
+            console.log(item)
+            if(item.value===''){
+                 alert(`Введите ${item.name}`)
+                return false
+            }else {
+            data.formObject[item.name] = item.value;
+            console.log("DataType", data.formObject)}
+        });
+
+
+
+        $.ajax({
+            url: '/login',
+            type:"POST",
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify(data.formObject),
+            dataType: "json",
+            success:function(data){
+                console.info(data.formObject);
+            }
+        });
+
+    }
+
+</script>
+</body>
+</html>

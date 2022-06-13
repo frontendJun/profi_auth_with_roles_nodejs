@@ -7,12 +7,14 @@
     "start": "nodemon index.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "frontendJun",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "bootstrap": "^5.2.0-beta1",
     "express": "^4.17.1",
     "express-validator": "^6.7.0",
+    "jquery": "^3.6.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.11.4",
     "nodemon": "^2.0.6"

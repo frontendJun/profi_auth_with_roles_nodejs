@@ -4,6 +4,9 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const { validationResult } = require('express-validator')
 const {secret} = require("./config")
+const {text} = require("express");
+const path = require('path')
+
 
 const generateAccessToken = (id, roles) => {
     const payload = {
@@ -55,14 +58,24 @@ class authController {
         }
     }
 
-    async getUsers(req, res) {
+    async authView(req, res){
+         try {
+             res.status(200)
+             res.sendFile(path.join(__dirname, 'view', 'index.html'))
+             console.log('TextInPOST')
+         }catch (e){
+             console.log(e)
+         }
+}
+
+   /* async getUsers(req, res) {
         try {
             const users = await User.find()
             res.json(users)
         } catch (e) {
             console.log(e)
         }
-    }
+    }*/
 }
 
 module.exports = new authController()
