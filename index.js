@@ -1,7 +1,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const authRouter = require('./authRouter')
-const PORT = process.env.PORT || 5000
+const PORT = process.env.PORT || 5500
 const path =require('path')
 
 const app = express()
@@ -17,7 +17,7 @@ app.use(express.static(__dirname + '/public'));
 
 const start = async () => {
     try {
-        await mongoose.connect(`mongodb+srv://shadiyar:aiker1578@cluster0.cmbcz.mongodb.net/?retryWrites=true&w=majority`)
+        await mongoose.connect(`mongodb+srv://shadi:123@clusterauth.eb6e07i.mongodb.net/user?retryWrites=true&w=majority`)
         app.listen(PORT, () => console.log(`server started on port ${PORT}`))
     } catch (e) {
         console.log(e)
